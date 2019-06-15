@@ -34,8 +34,7 @@ As one of the most popular cities in Europe, London has over 80,000 listings as 
 
 There is no available data on the number of bookings over the years. Instead we estimate the demand by looking at the number of reviews across years. According to [Inside Airbnb](http://insideairbnb.com/about.html), around 50% of the guests leave reviews to listings, so the number of reviews is a good estimator of the demand.  The "Number of reviews across years" graph shows an upward trend of the number of reviews which indicates increase in demand of rental listings. It also shows seasonal pattern with some months has reviews less than the others.
 
-<p float="left">
-  <img src="https://i.imgur.com/4PXvH0A.png" width="500" />
-  <img src="https://i.imgur.com/sTNu3kI.png" width="500" /> 
-</p>
+<img src="https://i.imgur.com/4PXvH0A.png" width="500" />
+<img src="https://i.imgur.com/sTNu3kI.png" width="500" /> 
+
 The other two graphs show monthly reviews in 2017 and 2018. Both graphs show deamand peaked at around August and slowly decreasing until the end of the year.  
