@@ -37,4 +37,11 @@ There is no available data on the number of bookings over the years. Instead we 
 <img src="https://i.imgur.com/4PXvH0A.png" width="500" />
 <img src="https://i.imgur.com/sTNu3kI.png" width="500" /> 
 
-The other two graphs show monthly reviews in 2017 and 2018. Both graphs show deamand peaked at around August and slowly decreasing until the end of the year.  
+The other two graphs show monthly reviews in 2017 and 2018. Both graphs show deamand peaked at around August and slowly decreasing until the end of the year. 
+
+> **Which month is more expensive to travel on?**
+
+![boxplot](https://i.imgur.com/P0j31Zx.png)
+The average prices tends to increases along the year except for May which is signifactly lower than the other months. In comparsion to the 'Number of reviews' plots in previous sections, the pattern is similar except for May and December. 
+
+December is more expensive compared to the other months. This may be because december is the holiday season and people are more likely to travel. May is the cheapest month to make a booking in Airbnb, perhaps it's closer to exam period. Moreover, the data is scraped on May, and many people would book at last minute to get a cheaper price.
