@@ -28,7 +28,7 @@ As one of the most popular cities in Europe, London has over 80,000 listings as 
 
 # Exploratory Analysis
 
-> **How is the demand for Airbnb changing in London?**
+> ## How is the demand for Airbnb changing in London?
 
 ![Imgur0](https://i.imgur.com/yyEVCyu.png)
 
@@ -39,9 +39,52 @@ There is no available data on the number of bookings over the years. Instead we 
 
 The other two graphs show monthly reviews in 2017 and 2018. Both graphs show deamand peaked at around August and slowly decreasing until the end of the year. 
 
-> **Which month is more expensive to travel on?**
+>  ## Which month is more expensive to travel on?
 
 ![boxplot](https://i.imgur.com/P0j31Zx.png)
 The average prices tends to increases along the year except for May which is signifactly lower than the other months. In comparsion to the 'Number of reviews' plots in previous sections, the pattern is similar except for May and December. 
 
 December is more expensive compared to the other months. This may be because december is the holiday season and people are more likely to travel. May is the cheapest month to make a booking in Airbnb, perhaps it's closer to exam period. Moreover, the data is scraped on May, and many people would book at last minute to get a cheaper price.
+
+
+> ## Whcih boroughs are more expensive, and which areas have the best reviews?
+
+The London boroughs are the 32 local authority districts that make up Greater London; each is governed by a London borough council. The detailed list of London boroughs can be found in this [link](https://en.wikipedia.org/wiki/List_of_London_boroughs).
+![location](https://i.imgur.com/zaDakuw.png)
+It is not surprised that Kensington and Chelsea borough is the most expensive borough to book a property. This borough is closed to many of the museums and department stores such as Harrods, Peter Jones and Harvey Nichols. Moreover, many of the most expensive residential properties in the world lie in this brough. The second one is the City of Westminster. This borough closes to many of the famous London landmarks (blue marker on the map), shopping areas and night-time entertainment area Soho. In general, inner london is more expensive than than outer london area.
+
+![location1](https://i.imgur.com/w3G784r.png)
+All of the london boroughs has average score ratings higher than 90 out of 100. As opposed to the price, outer london has higher review score ratings than inner london. Richmond upon Thames is the highest scores rating borough. The borough is home to open space such as Richmond Park, Kew Gardens, Bushy Park and Old Deer Park.
+
+> ## What are the main factors that influence pricing on Airbnb listings?
+
+![feature](https://i.imgur.com/G5dtRAz.png)
+
+The features that contribute most to the variance in prices are:
+
+* accommodates             
+* room type                 
+* Number of bedrooms                   
+* cleaning fee               
+* the borough the listing in   
+* The number of listings the host has 
+* The number of nights are avaliable to be booked in the next 90 days                        
+* listing id   
+* bathrooms  
+* fee for extra person    
+
+The top 2 features the number of people the property accommodates and room type contribute almost 43% to the price. This make snese because more people a property can live in, the higher the price is. It is the first thing we look at when we make a booking. Obviously if the room type is a private room, the price tends to be lower than the entire home/apartment.  
+
+Cleaning fee and the borough the listing in are also important features that influence the price. Interestingly the number of listings the host has is in the top 10 features. Maybe because these hosts are professional property management that is more realiable than individuals. Hence, the price is more expensive.  
+
+## Summary
+
+* The demand for Airbnb increased exponentially over the years.
+* Demand increases along the year until August and slowly decrease.
+* The cheapest month to book Airbnb is May.
+* Kensington and Chelsea borough is the most expensive borough to book a property. City of Westminster comes second. Both of the     b  boroughs are closed to famous London Landmarks.
+* Richmond upon Thames borough has the highest average review score ratings. 
+* Two main factors that influence the pricing of listings are accommodates and room type.  
+* Our best model to predict the price is using Catboost which has a r2 score of 73.9%. This means that the model explain 73.9% of the     variability in listing price. The result was not good enough. However, price is very different to predict correcly, and the remaining   26.1% may be explained by features that are not in the data.
+
+
