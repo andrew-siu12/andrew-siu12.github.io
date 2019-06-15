@@ -58,7 +58,7 @@ All of the london boroughs has average score ratings higher than 90 out of 100. 
 
 > ## What are the main factors that influence pricing on Airbnb listings?
 
-![feature](https://i.imgur.com/G5dtRAz.png)
+![feature](https://i.imgur.com/QRe4iWm.png)
 
 The features that contribute most to the variance in prices are:
 
