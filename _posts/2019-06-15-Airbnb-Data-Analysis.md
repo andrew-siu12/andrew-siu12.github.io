@@ -25,3 +25,8 @@ As one of the most popular cities in Europe, London has over 80,000 listings as 
 * `calendar` - Deatailed bookings for the next calendar year of listings
 * `reviews` - Detailed reviews data for listings in London.
 * `neigbourhoods` - geojson file of boroughs of London.
+
+# Exploratory Analysis
+
+> **How is the demand for Airbnb changing in London?**
+![Imgur0](https://i.imgur.com/yyEVCyu.png)
