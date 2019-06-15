@@ -1,11 +1,5 @@
 ---
 layout: post
-published: false
-title: Untitled
----
-
----
-layout: post
 title: Exploring-Airbnb-Listings-in-London
 subtitle: Each post also has a subtitle
 gh-repo: andrew-siu12/Airbnb-data-analysis
