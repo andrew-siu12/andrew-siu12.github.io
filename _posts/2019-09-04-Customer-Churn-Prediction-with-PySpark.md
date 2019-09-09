@@ -51,10 +51,13 @@ Finally, we define the churn label before performaing EDA on the dataset. The ch
 # Exploratory Analysis
 
 > ## What is the churn rate of Sparkify?
-<p float="left">
-  <img src="https://i.imgur.com/2TQEB19.png" width="250" />
-  <img src="https://i.imgur.com/oFSm5ka.png" width="250" /> 
-  <img src="https://i.imgur.com/h5qp9pe.png" width="250" />
-</p>
+
+![churn_rate](https://i.imgur.com/2TQEB19.png)
 
 From the chart above, we can see that around 77.9% of them are non-churn users and 22.1% of them are churn-users. In the full dataset, the statistics is almost the same. This is a sign to suggest that the sample is representative of the 12GB dataset. Also, this is an imbalanced dataset, we have select an appropriate metrics to evaluate the precition model.
+
+> ## What is the distribution of gender and level?
+<p float="left">
+  <img src="https://i.imgur.com/oFSm5ka.png" width="400" /> 
+  <img src="https://i.imgur.com/h5qp9pe.png" width="400" />
+</p>
