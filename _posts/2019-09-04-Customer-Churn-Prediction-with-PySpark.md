@@ -54,10 +54,23 @@ Finally, we define the churn label before performaing EDA on the dataset. The ch
 
 ![churn_rate](https://i.imgur.com/2TQEB19.png)
 
-From the chart above, we can see that around 77.9% of them are non-churn users and 22.1% of them are churn-users. In the full dataset, the statistics is almost the same. This is a sign to suggest that the sample is representative of the 12GB dataset. Also, this is an imbalanced dataset, we have select an appropriate metrics to evaluate the precition model.
+From the chart above, we can see that around 77.9% of them are non-churn users and 22.1% of them are churn-users. In the full dataset, the distribution is almost the same. This is a sign to suggest that the sample is representative of the population. Also, this is an imbalanced dataset, we have to select an appropriate metrics to evaluate the prediction model.
 
 > ## What is the distribution of gender and level?
 <p float="left">
-  <img src="https://i.imgur.com/oFSm5ka.png" width="400" /> 
-  <img src="https://i.imgur.com/h5qp9pe.png" width="400" />
+  <img src="https://i.imgur.com/oFSm5ka.png" width="300" /> 
+  <img src="https://i.imgur.com/h5qp9pe.png" width="300" />
 </p>
+More male users use sparkify than female users. The discrepancy between male users and female users is smaller. 52.2% are male users and 47.8% are female users. The subscription level is pretty much the same in full dataset and the sample.  
+
+> ## Churn vs gender and Churn rate vs subscription level
+<p float="left">
+  <img src="https://i.imgur.com/tKWeTnQ.png" width="300" /> 
+  <img src="https://i.imgur.com/ZcHHyw0.png" width="300" />
+</p>
+As expected both non churn users of male and female are much higher than churn users. The sames goes to subscription level. 
+
+
+> ## Is location related to the churn rate?
+
+<img src="https://i.imgur.com/zQ24Frv.png" width="300" />
