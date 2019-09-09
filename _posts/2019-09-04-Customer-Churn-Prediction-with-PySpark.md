@@ -78,3 +78,8 @@ As expected both non churn users of male and female are much higher than churn u
 Many users visit `NextSong` page which is very good for the music streaming business. Thumbs up is another important factor that suggest users like this app. Next, we look at the distribution of page and churn users. As we use  cancellation confirmation page to determine the churn label. We should not include the number of cancellation confirmation as part of our feature. Pages such as `Thumbs up`, `Add to playlist`, `Add Friend` has higher proportion of non-churn users. We can count the number of times users visit such pages to determine if the users are likely to churn or not.
 
 > ## Is there any particular time of the week/day has higher churn rate?
+![week_churn](https://i.imgur.com/rCoSu0g.png)
+![day_churn](https://i.imgur.com/X3eaRGC.png)
+
+It seems like less users using Sparkify during the weekends. Thus the number of churning users are less than the other days. Moreover, Thursday and Friday have lower churn users than other weekdays. We should create a feature to extract the weekday of a particular record. So Machine learning model can capture this relationship. More users using Sparkify from 14:00 to 23:00. But there is no clearn relationship between hour and churn rate.
+
