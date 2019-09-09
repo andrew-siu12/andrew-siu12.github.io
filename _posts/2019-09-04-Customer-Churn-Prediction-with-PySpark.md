@@ -81,5 +81,15 @@ Many users visit `NextSong` page which is very good for the music streaming busi
 ![week_churn](https://i.imgur.com/rCoSu0g.png)
 ![day_churn](https://i.imgur.com/X3eaRGC.png)
 
-It seems like less users using Sparkify during the weekends. Thus the number of churning users are less than the other days. Moreover, Thursday and Friday have lower churn users than other weekdays. We should create a feature to extract the weekday of a particular record. So Machine learning model can capture this relationship. More users using Sparkify from 14:00 to 23:00. But there is no clearn relationship between hour and churn rate.
+It seems like less users using Sparkify during the weekends. Thus the number of churning users are less than the other days. Moreover, Thursday and Friday have lower churn users than other weekdays. We should create a feature to extract the weekday of a particular record. So machine learning model can capture this relationship. More users using Sparkify from 14:00 to 23:00. But there is no clear relationship between hour and churn rate.
+
+![daily_churn](https://i.imgur.com/H655gvY.png)
+Both full dataset and samples start from 2018-10-01 nad end at 2018-12-01. We can look at the trend of the churning status of  users over the period of the dataset. The trend suggest that weekend user counts are lower in both churn users and non-churn users which confrom with the weekday churn plot above. The daily plot also suggests that the number of churn users decrease over the two months period. We may need some extra data to understand why such decrease happens. Due to computational cost, we were not able to compute such plot in the full dataset. It would be interesting to see if such pattern exist in the full dataset as well.
+
+
+## Does the user device affect the churn rate?
+<p float="left">
+  <img src="https://i.imgur.com/6Teset3.png" width="350" /> 
+  <img src="https://i.imgur.com/fzh8220.png" width="350" />
+</p>
 
