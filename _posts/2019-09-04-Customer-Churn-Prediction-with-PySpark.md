@@ -89,7 +89,53 @@ Both full dataset and samples start from 2018-10-01 nad end at 2018-12-01. We ca
 
 ## Does the user device affect the churn rate?
 <p float="left">
-  <img src="https://i.imgur.com/6Teset3.png" width="350" /> 
-  <img src="https://i.imgur.com/fzh8220.png" width="350" />
+  <img src="https://i.imgur.com/6Teset3.png" width="400" /> 
+  <img src="https://i.imgur.com/fzh8220.png" width="400" />
 </p>
+By using regex in python, we were able to extract the users' device, os and browser version. In the browser plot, one can see that mobile phone user have significantly higher churning rate than the other browers. The churning rate is 60%, firefox comes second with 26%.  The OS plot also suggest that IPhone users churn more than other OS. These two features should be useful for machine learning models to identify churn users. We shall include them in our features.
 
+# Feature engineering
+With the help of EDA, we are able to hand-crafted 16 features. These features includes:
+* **total number of artist listened** - This feature identify how many artist each user listens. The more artists listen may indicate how active the user is.
+* **Gender (binary), Level (binary)** - Binarize the gender and level feature for machine learning algorithms.
+* **total number of downgrades page** -  Since the downgrade page is related to the cancel subsription. The higher the number of downgrade page visit by users, the more likely the user will churn.
+* **add to playlist** - Frequent users are more likely to add to playlist than users. So this may be a good feature to identify the frequent users.
+* **thumbs down and thumbs up** - Users putting thumbs up may be less likely to churn versus thumbs down users
+* **add friend** - Users that add many friends may be less likely to churn
+* **total length of time listened** - the length of time users listen indicate how active they are
+* **number of songs listened** - similar to total length of time listened
+* **number of sessions per user** - more sessions relate to how active users are
+* **average songs per session** - aggregations of songs and session feature
+* **average session per day/month** - aggregations of songs and session feature
+* **location, os and browser features** - As mentioned in previous sessions, os and browser features are useful for modelling. We also use regex to extract the state where users use sparkify. This may be useful to identify which state are more likely to churn.
+
+# Modeling
+## Pipeline
+``` Python
+num_cols= ["total_artist", "gender", "level", "num_downgrade", "num_advert", "num_song_playlist",
+           "num_thumbs_down", "num_thumbs_up", "num_friend", "total_length", "num_song",
+           "session", "avg_songs", "avg_daily_sessions", "avg_monthly_sessions"]
+
+
+indexer_os = StringIndexer(inputCol="os", outputCol="os_index")
+indexer_browser = StringIndexer(inputCol="browser", outputCol="browser_index")
+indexer_browser_ver = StringIndexer(inputCol="browser_ver", outputCol="browser_ver_index")
+assemblerCat = VectorAssembler(inputCols=["os_index", "browser_index", "browser_ver_index"], outputCol="cat")
+
+pipelineCat = Pipeline(stages = [indexer_os, indexer_browser, indexer_browser_ver, assemblerCat])
+transformed_event = pipelineCat.fit(transformed_event).transform(transformed_event)
+
+
+
+assemblerNum = VectorAssembler(inputCols=num_cols, outputCol="Num")
+scaler = StandardScaler(inputCol="Num", outputCol="scaled_num")
+pipelineNum = Pipeline(stages=[assemblerNum, scaler])
+transformed_event = pipelineNum.fit(transformed_event).transform(transformed_event)
+
+assembler = VectorAssembler(inputCols=["cat", "scaled_num"], outputCol="features")
+
+features_pipeline = Pipeline(stages=[assembler])
+
+transformed_event = features_pipeline.fit(transformed_event).transform(transformed_event)
+```
+We first label encode os, browser and browser version features and use pipeline to process these features. Then we handle numerical features by concatenting to feature vectors and scale all these columns to have mean 0 and standard deviation 1. Avoid numerical instabilities due to large values. We then concatenate the categorical features and numerical features into one feature column.
