@@ -58,19 +58,23 @@ From the chart above, we can see that around 77.9% of them are non-churn users a
 
 > ## What is the distribution of gender and level?
 <p float="left">
-  <img src="https://i.imgur.com/oFSm5ka.png" width="300" /> 
-  <img src="https://i.imgur.com/h5qp9pe.png" width="300" />
+  <img src="https://i.imgur.com/oFSm5ka.png" width="350" /> 
+  <img src="https://i.imgur.com/h5qp9pe.png" width="350" />
 </p>
 More male users use sparkify than female users. The discrepancy between male users and female users is smaller. 52.2% are male users and 47.8% are female users. The subscription level is pretty much the same in full dataset and the sample.  
 
 > ## Churn vs gender and Churn rate vs subscription level
 <p float="left">
-  <img src="https://i.imgur.com/tKWeTnQ.png" width="300" /> 
-  <img src="https://i.imgur.com/ZcHHyw0.png" width="300" />
+  <img src="https://i.imgur.com/tKWeTnQ.png" width="350" /> 
+  <img src="https://i.imgur.com/ZcHHyw0.png" width="350" />
 </p>
 As expected both non churn users of male and female are much higher than churn users. The sames goes to subscription level. 
 
+> ## Distribution of page and churn rate
 
-> ## Is location related to the churn rate?
+![page](https://i.imgur.com/5hhe1KM.png)
+![page_churn](https://i.imgur.com/BredsTw.png)
 
-<img src="https://i.imgur.com/zQ24Frv.png" width="300" />
+Many users visit `NextSong` page which is very good for the music streaming business. Thumbs up is another important factor that suggest users like this app. Next, we look at the distribution of page and churn users. As we use  cancellation confirmation page to determine the churn label. We should not include the number of cancellation confirmation as part of our feature. Pages such as `Thumbs up`, `Add to playlist`, `Add Friend` has higher proportion of non-churn users. We can count the number of times users visit such pages to determine if the users are likely to churn or not.
+
+> ## Is there any particular time of the week/day has higher churn rate?
