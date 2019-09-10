@@ -14,7 +14,9 @@ comments: true
 
 # Overview
 
-In this project, we will be creating a predictive model for customer churn prediction of a fictional music streaming service: Sparkify (similar to Spotify and Pandora). Churn prediction is about making use of customer data to predict the likelihood of customers discontinuing their subscription in the future. Predicting churn rate is important because it can help Sparkify to identify and improve areas where customer services is lacking. So churn prediction helps to prevent individuals from discontinuing their subscription. According to [ClickZ](https://www.clickz.com/are-ecommerce-customer-retention-strategies-improving/105454/), the probability of selling to an existing customer is 60 - 70%. However, the probability of selling to a new prospect is just 5-20%.
+In this project, we will be creating a predictive model for customer churn prediction of a fictional music streaming service: Sparkify (similar to Spotify and Pandora). We first explore Sparkify usage data in tiny dataset (240mb) and find potential features for applying machine learning models. An appropriate metrics will then be selected to evaluate the machine learning models. Three models with default hyperparameters are used at first to compare the perforamce. We then perform hyperparameter tuning for the three models and pick the best model. Finally, we apply the tuned model in the full dataset and compare the difference in performance with the tiny dataset.
+
+Predicting churn rate is important because it can help Sparkify to identify and improve areas where customer services is lacking. So churn prediction helps to prevent individuals from discontinuing their subscription. According to [ClickZ](https://www.clickz.com/are-ecommerce-customer-retention-strategies-improving/105454/), the probability of selling to an existing customer is 60 - 70%. However, the probability of selling to a new prospect is just 5-20%.
 So it is very important to keep the existing customer around.
 
 # Data
@@ -140,8 +142,11 @@ transformed_event = features_pipeline.fit(transformed_event).transform(transform
 ```
 We first label encode os, browser and browser version features and use pipeline to process these features. Then we handle numerical features by concatenting to feature vectors and scale all these columns to have mean 0 and standard deviation 1. Avoid numerical instabilities due to large values. We then concatenate the categorical features and numerical features into one feature column.
 
+## Metrics Selection
+The accuracy metrics is not particular useful for imbalanced class. So we look into precision, recall and f1 score as well. However, we can create a fake "classifier" that ignore all the inputs and always return the same prediction: "churn". The recall of this classifier is going to be 1 as we correcly classified all churn users, but precision is close to zero. So F1 score is more appropiate choice to evaluate the performance of the model as it considers both precision and recall. So if F1 score is high, both precision and reacll of the classifier must be high as well.
+
 ## Base Models
-We fitted logistic regression, Random Forest and Gradient bossting classifier with default parameter. The accuracy metrics is not particular useful for imbalanced class. So we look into precision, recall and f1 score as well. The table summarised the scores for these classifiers.
+We fitted logistic regression, Random Forest and Gradient bossting classifier with default parameter. The table summarised the scores for these classifiers.
 
 | Classifier      | accuracy | precision| recall | f1 score|
 | -------------   |:--------:| --------:| ------:| -------:|
