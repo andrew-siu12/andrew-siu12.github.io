@@ -62,18 +62,18 @@ All of the london boroughs has average score ratings higher than 90 out of 100. 
 
 The features that contribute most to the variance in prices are:
 
-* accommodates             
-* room type                 
-* Number of bedrooms                   
-* cleaning fee               
+* avaliability_90            
+* number of reviews           
+* cleaning fee                   
+* The number of listings the host has              
 * the borough the listing in   
-* The number of listings the host has 
-* The number of nights are avaliable to be booked in the next 90 days                        
-* listing id   
-* bathrooms  
+* maximum nights
+* minimum nights                     
+* security deposits  
 * fee for extra person    
+* accommodates
 
-The top 2 features the number of people the property accommodates and room type contribute almost 43% to the price. This make snese because more people a property can live in, the higher the price is. It is the first thing we look at when we make a booking. Obviously if the room type is a private room, the price tends to be lower than the entire home/apartment.  
+The top 2 features are the number of nights are avaliable to be booked in the next 90 days and the number of reviews. I guess the price would be more expensive if the property is almost fully booked in the next 90 days. Number of reviews is probably one of the first few things we look at when we make a booking. If the number of reviews are high, this means the property is popular and price may be slightly cheaper than the rest.
 
 Cleaning fee and the borough the listing in are also important features that influence the price. Interestingly the number of listings the host has is in the top 10 features. Maybe because these hosts are professional property management that is more realiable than individuals. Hence, the price is more expensive.  
 
