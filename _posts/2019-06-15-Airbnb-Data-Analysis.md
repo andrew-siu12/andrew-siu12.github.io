@@ -58,7 +58,7 @@ All of the london boroughs has average score ratings higher than 90 out of 100. 
 
 > ## What are the main factors that influence pricing on Airbnb listings?
 
-![feature](https://i.imgur.com/QRe4iWm.png=300x)
+![feature](https://i.imgur.com/s8TZzTr.png=350x)
 
 The features that contribute most to the variance in prices are:
 
@@ -85,6 +85,6 @@ Cleaning fee and the borough the listing in are also important features that inf
 * Kensington and Chelsea borough is the most expensive borough to book a property. City of Westminster comes second. Both of the     b  boroughs are closed to famous London Landmarks.
 * Richmond upon Thames borough has the highest average review score ratings. 
 * Two main factors that influence the pricing of listings are accommodates and room type.  
-* Our best model to predict the price is using Catboost which has a r2 score of 73.9%. This means that the model explain 73.9% of the     variability in listing price. The result was not good enough. However, price is very different to predict correcly, and the remaining   26.1% may be explained by features that are not in the data.
+* Our best model to predict the price is using LightGBM which has an adjusted r2 score of 76.923%. This means that the model explain 76.923% of the variability in listing price. The result was not good enough. However, price is very difficult to predict correcly, and the remaining 23.077% may be explained by features that are not used in the model.
 
 
